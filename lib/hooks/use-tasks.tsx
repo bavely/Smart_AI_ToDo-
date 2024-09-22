@@ -1,10 +1,7 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
-// import { defaultTasks } from "../default-tasks";
 import { getTasks, handleAddTask, handleTaskStatus, handleDeleteTask } from "@/services/tasksServices";
-//  handleAddTask, handleTaskStatus, handleDeleteTask
 import { Task, TaskStatus } from "../tasks.types";
 import { useCopilotReadable, useCopilotAction } from "@copilotkit/react-core";
-// let nextId = defaultTasks.length + 1;
 
 type TasksContextType = {
   tasks: Task[];

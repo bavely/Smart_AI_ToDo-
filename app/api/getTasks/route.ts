@@ -3,7 +3,7 @@ import { NextResponse, NextRequest } from 'next/server'
 import clientPromise from '../../../lib/mongodb';
 import { ObjectId } from 'mongodb';
 
-export async function GET(req: NextApiRequest, response: NextApiResponse) {
+export async function GET(req: NextRequest, response: NextApiResponse) {
  
     try {
       const client = await clientPromise;
@@ -18,7 +18,7 @@ export async function GET(req: NextApiRequest, response: NextApiResponse) {
 }
 
 
-export async function POST(request: NextRequest, res: NextResponse) {
+export async function POST(request: NextRequest, response: NextResponse) {
 
     try {
       const client = await clientPromise;
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest, res: NextResponse) {
     }
 }
 
-export async function PUT(request: NextRequest, res: NextResponse) {
+export async function PUT(request: NextRequest, response: NextResponse) {
   const { id, status } = await request.json();
   try {
     const client = await clientPromise;
@@ -46,7 +46,7 @@ export async function PUT(request: NextRequest, res: NextResponse) {
   }
 }
 
-export async function DELETE(request: NextRequest, res: NextResponse) {
+export async function DELETE(request: NextRequest, response: NextResponse) {
   const { id } = await request.json();
   try {
     const client = await clientPromise;
