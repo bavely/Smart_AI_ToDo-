@@ -10,7 +10,7 @@ export async function getTasks(): Promise<Task[]> {
 export async function handleAddTask(task: TaskForm): Promise<Task> {
     const {title, status} = task
     const { data } = await axios.post("/api/getTasks", { title, status });
-    return data;
+    return data.data;
 }
 
 export async function handleTaskStatus(id: number, status: TaskStatus): Promise<Task> {
